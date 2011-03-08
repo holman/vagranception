@@ -1,0 +1,11 @@
+Vagrant::Config.run do |config|
+  config.vm.box     = "base"
+  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+
+  config.vm.share_folder "vagranception", "/vagranception", "../"
+
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = "cookbooks"
+    chef.add_recipe "run"
+  end
+end
