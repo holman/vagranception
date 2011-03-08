@@ -12,7 +12,7 @@ app = NSApplication.sharedApplication
 class AppDelegate
   def speechRecognizer(sender, didRecognizeCommand:command)
     puts "command: #{command}"
-    exit!
+    exit!(0)
   end
 end
 

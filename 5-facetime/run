@@ -1,0 +1,2 @@
+#!/bin/sh
+macruby 5-facetime/recognize.rb && ruby 5-facetime/facetime.rb
