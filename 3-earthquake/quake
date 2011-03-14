@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# curls the last quakes in the world and re-checks it every five seconds to see
+# if anything else happens.
+#
+# POSSIBLE BUG: if it's a really huge earthquake that rips the Earth's crust
+# and/or the fabric of space-time in half, this script could be interrupted
+# prior to entering the next loop (perhaps my living room just exploded, for
+# example).
+
+url="http://earthquake.usgs.gov/earthquakes/catalogs/eqs1hour-M0.txt"
+curl --silent $url | sed -n 2p | gmd5sum > /tmp/quakes
+
+while [ 1 ]
+do
+  echo "trying"
+  output=$(curl --silent $url | sed -n 2p | gmd5sum -c /tmp/quakes)
+
+  if [[ $output == *OK* ]]
+  then
+    echo "None yet! We're still alive!"
+  else
+    echo "Holy shit! An earthquake!"
+    exit 0
+  fi
+  
+  sleep 5
+done
