@@ -1,12 +1,3 @@
-# Add the VirtualBox sources
-execute "echo 'deb http://download.virtualbox.org/virtualbox/debian lucid contrib' | sudo tee -a /etc/apt/sources.list"
-execute "apt-get update"
-
-# Install VirtualBox. Like a boss.
-package "virtualbox-4.0" do
-  options "--allow-unauthenticated"
-end
-
 # Install Vagrant within Vagrant.
 # motherfuckers.
 gem_package "vagrant"

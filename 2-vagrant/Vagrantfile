@@ -1,10 +1,5 @@
 Vagrant::Config.run do |config|
   config.vm.box     = "base"
-  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
-
-  config.vm.customize do |vm|
-    vm.memory_size = 3000
-  end
 
   # mount the entire project in /vagranception
   config.vm.share_folder "vagranception", "/vagranception", "../"
