@@ -1,3 +1,4 @@
 .vagrant
+boxes
 config/*
 !config/README.md
