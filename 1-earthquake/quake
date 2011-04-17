@@ -13,7 +13,7 @@ curl --silent $url | sed -n 2p | gmd5sum > /tmp/quakes
 
 while [ 1 ]
 do
-  echo "trying"
+  echo " - checking - "
   output=$(curl --silent $url | sed -n 2p | gmd5sum -c /tmp/quakes)
 
   if [[ $output == *OK* ]]

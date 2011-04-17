@@ -1,2 +1,2 @@
-cd 1-vagrant
+cd 2-vagrant
 vagrant up
