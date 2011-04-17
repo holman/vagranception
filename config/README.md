@@ -10,3 +10,5 @@ as they need them.
 These files should be in `/config`:
 
 - `facetime-number` - the number to FaceTime
+- `numbers-to-call` - the numbers we'll bomb over Twilio
+- `twilio-credentials` - a YAML file for Twilio: `sid` line, then a line for your `token`.
