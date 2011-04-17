@@ -4,13 +4,14 @@ require 'sinatra'
 
 get "/" do
   if File.exist?('/tmp/quake-meme.jpg')
+    fork { sleep(10) && `cd .. && 4-facetime/run` }
     s = <<HTMLLOL
 <html> 
   <head> 
     <title>quake</title> 
   </head> 
   <body style="background-color: #2c4762">
-    <img src="/quake.jpg" width="800px">
+    <img src="/quake.jpg" width="700px">
   </body> 
 </html> 
 HTMLLOL
