@@ -1,8 +1,9 @@
 Vagrant::Config.run do |config|
-  config.vm.box     = "base"
-
+  config.vm.box     = "centos"
+  config.vm.box_url = "http://dl.dropbox.com/u/447700/centos55.box"
+ 
   # mount the entire project in /vagranception
-  config.vm.share_folder "vagranception", "/vagranception", "../"
+  # config.vm.share_folder "vagranception", "/vagranception", "../"
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
