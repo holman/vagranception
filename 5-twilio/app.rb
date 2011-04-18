@@ -40,7 +40,8 @@ end
 
 post '/response' do
   Twilio::Verb.new do |v|
-    puts "_TEXT: #{text=Helper.text}"
+    text = Helper.text
+    puts "_TEXT: #{text}"
     v.say text
     v.record
   end.response
