@@ -15,7 +15,7 @@ while [ 1 ]
 do
   output=$(curl --silent $url | sed -n 2p | gmd5sum -c /tmp/quakes)
 
-  if [[ $output == *2OK* ]]
+  if [[ $output == *OK* ]]
   then
     echo "None yet! We're still alive!"
   else
