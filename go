@@ -1,2 +1,1 @@
-cd 2-vagrant
-vagrant up
+./1-earthquake/quake

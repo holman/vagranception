@@ -13,16 +13,17 @@ curl --silent $url | sed -n 2p | gmd5sum > /tmp/quakes
 
 while [ 1 ]
 do
-  echo " - checking - "
   output=$(curl --silent $url | sed -n 2p | gmd5sum -c /tmp/quakes)
 
-  if [[ $output == *OK* ]]
+  if [[ $output == *2OK* ]]
   then
     echo "None yet! We're still alive!"
   else
     echo "Holy shit! An earthquake!"
+    echo "\nBOOTING EMERGENCY ELLEN PAGE VAGRANT\n"
+    cd 2-vagrant && vagrant up
     exit 0
   fi
-  
+  echo " - checking - "
   sleep 5
 done
