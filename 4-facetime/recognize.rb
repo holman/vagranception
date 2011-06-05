@@ -14,6 +14,7 @@ app = NSApplication.sharedApplication
 class AppDelegate
   def speechRecognizer(sender, didRecognizeCommand:command)
     puts "command: #{command}"
+    system "osascript -e 'tell application \"FaceTime\" to quit'"
     exit!(0)
   end
 end
