@@ -3,8 +3,10 @@
 #
 # Mr. Aimonetti also gave a more expanded version of this during his 2010
 # RubyConf talk, which maybe my subconscious drummed up enough to give me the
-# idea for parts of this segment.
-
+# idea for parts of this segment. MAYBE.
+#
+# In your Speech system preferences, make sure it's listening without keypress,
+# and make sure your sound input is correct.
 framework 'AppKit'
 
 app = NSApplication.sharedApplication
