@@ -37,8 +37,11 @@ HTMLLOL
   end
 end
 
+# gem install memegen
+# https://github.com/cmdrkeene/memegen
 get "/quake" do
-  `meme Y_U_NO 'EARTH' 'Y U NO STAY STILL' > /tmp/quake-meme.jpg`
+  file = `memegen y_u_no 'EARTH' 'Y U NO STAY STILL'`.chomp
+  system "mv #{file} /tmp/quake-meme.jpg"
 end
 
 get "/quake.jpg" do
