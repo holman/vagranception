@@ -5,5 +5,5 @@ require 'rubygems'
 require 'appscript'
 
 Appscript::app('FaceTime').activate
-sleep(1)
+sleep(3)
 Appscript::app('System Events').keystroke("\r")
