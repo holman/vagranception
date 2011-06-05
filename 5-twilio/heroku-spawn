@@ -16,3 +16,4 @@ git commit -m "trololol"
 heroku create
 heroku rename vagranception
 git push heroku master
+curl vagranception.heroku.com/dial
