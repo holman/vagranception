@@ -35,7 +35,7 @@ that's (mostly) all in the [config README][readme].
 Don't take this too seriously; I didn't. It's fun to hack around sometimes
 though, no?
 
-[screencast]: http://zachholman.com
+[screencast]: http://zachholman.com/screencast/vagranception
 [quake]: https://github.com/holman/vagranception/blob/master/1-earthquake/quake
 [vagrant]: https://github.com/holman/vagranception/tree/master/2-vagrant
 [meme]: https://github.com/holman/vagranception/blob/master/3-meme/meme.rb
