@@ -21,7 +21,7 @@ class Helper
       "Ellen Page forked Mislav's will-paginate and called it Ellen Page-in-ate. Should Mislav accept the pull request?",
       "Ellen Page animates GIFs with her bare hands while listening to Daft Punk at tumultuous volumes. Should GitHub steal her?",
       "Zach Holman is going to make voracious love to Ellen Page. I just wanted to let you know.",
-      "Even though Chris Wanstrath has flowing locks of georgeous hair, Ellen Page's hair has unicorns in it. Should GitHub hire Ellen Page as our new CEO?",
+      "Even though Chris Wanstrath has flowing locks of gorgeous hair, Ellen Page's hair has unicorns in it. Should GitHub hire Ellen Page as our new CEO?",
       "I just wanted to ask you: should GitHub hire Ellen Page? Just think about it. She knows all about Pull Requests and about git re re re.",
       "Boy, if GitHub hired Ellen Page, they could probably IPO at 30 billion dollars. Groupon don't know about it."
     ].shuffle.first
