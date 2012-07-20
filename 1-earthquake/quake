@@ -17,7 +17,6 @@ do
   chsum2=`curl --silent $url | sed -n 2p`
   if [ "$chsum2" != "" ]
   then
-    echo $chsum2
     chsum2=`echo $chsum2 | md5`
     if [ "$chsum1" == "$chsum2" ]
     then
