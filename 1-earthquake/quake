@@ -8,23 +8,27 @@
 # prior to entering the next loop (perhaps my living room just exploded, for
 # example).
 
-url="http://earthquake.usgs.gov/earthquakes/catalogs/eqs1hour-M0.txt"
-curl --silent $url | sed -n 2p | gmd5sum > /tmp/quakes
+url='http://earthquake.usgs.gov/earthquakes/catalogs/eqs1hour-M0.txt'
+chsum1=`curl --silent $url | sed -n 2p | md5`
+chsum2=$chsum1
 
 while [ 1 ]
 do
-  output=$(curl --silent $url | sed -n 2p | gmd5sum -c /tmp/quakes)
-
-  if [[ $output == *OK* ]]
+  chsum2=`curl --silent $url | sed -n 2p`
+  if [ "$chsum2" != "" ]
   then
-    echo "None yet! We're still alive!"
+    chsum2=`echo $chsum2 | md5`
+    if [ "$chsum1" == "$chsum2" ]
+    then
+      echo "None yet! We're still alive!"
+    else
+      echo "Holy shit! A fucking earthquake!"
+      say "Holy shit! A fucking earthquake!"
+      cd 2-vagrant && vagrant up
+      exit 0
+    fi
   else
-    say "Holy shit\! A fucking earthquake\!"
-    echo "Holy shit! An earthquake!"
-    echo "\nBOOTING EMERGENCY ELLEN PAGE VAGRANT\n"
-    cd 2-vagrant && vagrant up
-    exit 0
+    echo "None yet! We're still alive!"
   fi
-  echo " - checking - "
   sleep 5
 done
